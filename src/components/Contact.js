@@ -1,6 +1,6 @@
 import React from 'react'
-import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { IconButton } from '@material-ui/core';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const useStyles = makeStyles((theme) => ({

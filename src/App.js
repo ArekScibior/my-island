@@ -6,6 +6,7 @@ import Header from './components/Header';
 import CardBox from './components/CardBox';
 import Team from './components/Team';
 import Contact from './components/Contact';
+import TextContainer from './components/TextContainer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,7 @@ export default function App() {
       	<CssBaseline />
         <Header />
         <CardBox />
+        <TextContainer />
 		    <Team />
         <Contact />
     </div>

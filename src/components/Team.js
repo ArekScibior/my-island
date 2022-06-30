@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 			flexDirection: 'column',
 			alignItems: 'center',
 		},
-		minHeight: '80vh',
+		minHeight: '60vh',
 	},
     groupIcon: {
         color: '#fff',
