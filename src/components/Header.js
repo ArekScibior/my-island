@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {IconButton, Collapse } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import CloseIcon from '@material-ui/icons/Close';
 import './Header.css';
 
 
@@ -54,6 +55,16 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header() {
 	const classes = useStyles();
+	const [sidebar, setSidebar] = useState(false);
+
+	const showSidebar = () => { setSidebar(!sidebar) }
+	useEffect(() => { 
+		function resize() {
+			if (window.innerWidth > 1280) { setSidebar(false); }
+		}
+		window.addEventListener('resize', resize);
+	});
+
   	return (
 		<div id="header">
 			<div className={classes.headerWrapper}>
@@ -68,9 +79,22 @@ export default function Header() {
 						<li>Contact</li>
 					</ul>
 				</div>
-				<IconButton>
+				{!sidebar && <IconButton onClick={showSidebar}>
 					<SortIcon className={classes.sortIcon}/>
-				</IconButton>
+				</IconButton> }
+				<nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+					<ul className='nav-menu-items'>
+						<li className='nav-icon-close'>
+							<IconButton onClick={showSidebar}>
+								<CloseIcon className={'close-icon'}/>
+							</IconButton>
+						</li>
+						<li className='nav-menu-text'>About us</li>
+						<li className='nav-menu-text'>Offer</li>
+						<li className='nav-menu-text'>Price</li>
+						<li className='nav-menu-text'>Contact</li>
+					</ul>
+				</nav>
 			</div>
 			<div className={classes.centerTextWrapper}>
 				<span>

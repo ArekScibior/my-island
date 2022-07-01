@@ -1,7 +1,6 @@
 .menu-navigation ul {
     display: inline-flex;
 }
-
 .menu-navigation li {
     padding: 20px;
     color: #fff;
@@ -16,4 +15,56 @@
     transform: scale(1.2);
     transition: all 0.2s ease-in-out;
     color: #C729B4;
+}
+
+.nav-menu {
+    background-color: rgba(0,0,0,0.95);  
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 850ms;
+}
+
+.nav-menu.active {
+    right: 0;
+    transition: 250ms;
+    z-index: 1;
+}
+
+.nav-menu-items {
+    width: 100%;
+
+}
+.nav-menu-text, .nav-icon-close {
+    display:flex;
+    justify-content: end;
+    padding: 8px 0px 8px 16px;
+    color: #fff;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 95%;
+    font-size: 1.3rem;
+}
+
+.nav-menu-text:hover {
+    background-color: #C729B4;
+    padding:10px 20px 10px 20px;
+    border-radius: 20px;
+}
+
+.close-icon {
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+}
+.close-icon:hover {
+    color: #C729B4;
+    border-radius: 20px;
+    transform: scale(2);
+    transition: all 0.2s ease-in-out;
 }
